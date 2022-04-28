@@ -1,0 +1,27 @@
+-- primo blocco --
+
+1. 
+    SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = '1990';
+2. 
+    SELECT * FROM `courses` WHERE `cfu` >= '10';
+3.
+    SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = '1992';
+4.
+    SELECT * FROM `courses` WHERE `year` = 1 AND `period` = 'I semestre';
+5.
+    SELECT * FROM `degrees` WHERE `name` LIKE '%Corso di Laurea Magistrale%';
+6.
+    SELECT * FROM `departments` AS `dipartimenti_presenti`;
+7.
+    SELECT * FROM `teachers` WHERE `phone` IS NULL;
+
+-- secondo blocco --
+
+1.
+    SELECT COUNT(*), YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`);
+2. 
+    SELECT COUNT(*) AS `number_of_teacher`, `office_address` FROM `teachers` GROUP BY `office_address`;
+3.
+    SELECT AVG(`vote`) AS `media_voto_per_esame` FROM `exam_student` GROUP BY `exam_id`;
+4.  
+    SELECT COUNT(`name`) AS `numero_corsi_di_laurea` FROM `courses` GROUP BY `degree_id`;
