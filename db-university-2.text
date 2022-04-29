@@ -13,4 +13,19 @@
     ON `degrees` . `id` = `courses` . `degree_id`
     WHERE `departments` . `name` = 'Dipartimento di Neuroscienze';
 3.
+    SELECT `courses` . `name`, `teachers` . `name`
+    FROM `teachers`
+    JOIN `course_teacher`
+    ON `teachers` . `id` = `course_teacher` . `course_id`
+    JOIN `courses`
+    ON `course_teacher` . `teacher_id` = `courses` . `id`
+    WHERE `teachers` . `name` = 'Fulvio Amato';
+4.
+    SELECT *
+    FROM `students`
+    JOIN `degrees`
+    ON `degrees`.`id` = `students`.`degree_id`
+    JOIN `departments`
+    ON `departments` . `id` = `degrees` . `department_id`;
+5.
     
