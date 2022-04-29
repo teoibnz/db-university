@@ -1,0 +1,16 @@
+1.
+    SELECT `students` . `name`, `students` . `surname`, `degrees` . `name`
+    FROM `students`
+    JOIN `degrees` 
+    ON `degrees` . `id` = `students` . `degree_id`
+    WHERE `degrees` . `name` = 'Corso di Laurea in Economia';
+2.
+    SELECT `courses` . `name`, `departments` . `name`
+    FROM `departments`
+    JOIN `degrees` 
+    ON `departments` . `id` = `degrees` . `department_id`
+    JOIN `courses`
+    ON `degrees` . `id` = `courses` . `degree_id`
+    WHERE `departments` . `name` = 'Dipartimento di Neuroscienze';
+3.
+    
